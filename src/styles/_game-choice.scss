@@ -1,0 +1,42 @@
+.game-choice {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &_rock {
+   background-color: #df405e;
+   border-radius: 50%;
+   box-shadow: inset 0px -8px 0px 0px #9d1634;
+  }
+
+  &_paper {
+   background-color: #4d6af4;
+   border-radius: 50%;
+   box-shadow: inset 0px -8px 0px 0px #2945c3;
+  }
+
+  &_scissors {
+   background-color: #ee9d0e;
+   border-radius: 50%;
+   box-shadow: inset 0px -8px 0px 0px #c66d1b;
+  }
+
+  &_inner {
+    box-shadow: inset 0px 8px 0px 0px #b7bfe3;
+    background-color: #fff;
+    border-radius: 50%;
+    height: 75%;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .game-choice_image {
+      height: 40%;
+      width: 40%;
+    }
+  }
+}

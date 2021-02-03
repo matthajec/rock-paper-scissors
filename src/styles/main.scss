@@ -1,0 +1,25 @@
+@import 'reset','game-choice', 'scoreboard', 'modal';
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+#root {
+  background: radial-gradient(circle at top, rgba(31,54,86,1) 0%, rgba(18,21,54,1) 92%);
+  height: 100vh;
+  position: relative;
+  font-family: "Barlow Semi Condensed", Arial, Helvetica, sans-serif;
+  padding: 50px;
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+}
+
+.flex-sb {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
