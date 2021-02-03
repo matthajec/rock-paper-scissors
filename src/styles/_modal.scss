@@ -66,5 +66,9 @@
     padding: 0;
     color: #b7bacb;
     font-size: 27px;
+
+    &:before {
+      content: 'X'
+    }
   }
 }

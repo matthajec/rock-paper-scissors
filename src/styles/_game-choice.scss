@@ -39,4 +39,11 @@
       width: 40%;
     }
   }
+
+  &_fake {
+    height: 200px;
+    width: 200px;
+    background-color: rgba(0,0,0, .1);
+    border-radius: 50%;
+  }
 }

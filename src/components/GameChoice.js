@@ -14,9 +14,9 @@ const getIcon = type => {
   }
 };
 
-export default function GameChoice({ type, children, ...restProps }) {
+export default function GameChoice({ unclickable, type, children, ...restProps }) {
   return (
-    <div {...restProps} className={`game-choice game-choice_${type}`}>
+    <div {...restProps} className={`${unclickable && 'unclickable'} game-choice game-choice_${type}`}>
       <div className={'game-choice_inner'}>
         <img className="game-choice_image" src={getIcon(type)} alt={type} />
       </div>
@@ -24,3 +24,6 @@ export default function GameChoice({ type, children, ...restProps }) {
   );
 }
 
+GameChoice.Fake = function GameChoiceFake({ ...restProps }) {
+  return <div className="game-choice_fake" {...restProps}></div>;
+};

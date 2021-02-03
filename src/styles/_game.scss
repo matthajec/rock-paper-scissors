@@ -1,0 +1,44 @@
+.game {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &.step-1 {
+    display: flex;
+    top: 25%;
+    flex-wrap: wrap;
+    background-image: url('../images/bg-triangle.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 330px;
+    justify-content: space-around;
+    align-items: center;
+    height: 580px;
+    width: 580px;
+  }
+
+  &.step-2 {
+    width: 700px;
+    top: 32%;
+    display: grid;
+    grid-template-areas: 
+      "player house"
+      "user cpu";
+    place-items: center;
+    height: 370px;
+
+    & .game-choice {
+      height: 250px;
+      width: 250px;
+    }
+
+    .step-2_text {
+      color: #fff;
+      font-weight: bold;
+      font-size: 28px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+  }
+}
+

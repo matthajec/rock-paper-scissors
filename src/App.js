@@ -1,26 +1,32 @@
-import React from 'react';
-import GameChoice from './components/GameChoice';
+import React, { useState } from 'react';
 import Scoreboard from './components/Scoreboard';
 import Modal from './components/Modal';
 import RulesImg from './images/image-rules.svg';
+import Game from './steps/Game';
 
-const App = () => (
-  <div>
-    <Scoreboard />
-    <Modal>
-      <Modal.Wrapper>
-        <Modal.Inner>
-          <div className="flex-sb">
-            <Modal.Title>rUlEs</Modal.Title>
-            <Modal.CloseButton>X</Modal.CloseButton>
-          </div>
-          <Modal.Image src={RulesImg} alt="rules" />
+const App = () => {
+  const [step, setStep] = useState(1);
+  const [score, setScore] = useState(0);
 
-        </Modal.Inner>
-      </Modal.Wrapper>
-      <Modal.ToggleButton>Rules</Modal.ToggleButton>
-    </Modal>
-  </div>
-);
+  return (
+    <>
+      <Scoreboard score={score} />
+      <Modal>
+        <Modal.Wrapper>
+          <Modal.Inner>
+            <div className="flex-sb">
+              <Modal.Title>rules</Modal.Title>
+              <Modal.CloseButton />
+            </div>
+            <Modal.Image src={RulesImg} alt="rules" />
+
+          </Modal.Inner>
+        </Modal.Wrapper>
+        <Modal.ToggleButton>Rules</Modal.ToggleButton>
+      </Modal>
+      <Game step={step} />
+    </>
+  );
+};
 
 export default App;
