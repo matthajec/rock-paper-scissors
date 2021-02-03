@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import StepOne from './StepOne';
 import StepTwo from './StepTwo';
 import StepThree from './StepThree';
+import GameContext from '../context/GameContext';
 
-export default function ({ step }) {
+export default function () {
+  const { step } = useContext(GameContext);
+
 
   return (
-    <div className={`game step-${step}`}>
-      {step === 1 && <StepOne />}
-      {step === 2 && <StepTwo playerPick="rock" />}
-      {step === 3 && <StepThree />}
+    <div className={`game step-${step.value}`}>
+      {step.value === 1 && <StepOne />}
+      {step.value === 2 && <StepTwo />}
+      {step.value === 3 && <StepThree />}
     </div>
   );
 }

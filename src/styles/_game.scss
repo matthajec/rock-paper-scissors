@@ -40,5 +40,58 @@
       text-transform: uppercase;
     }
   }
+
+  &.step-3 {
+    top: 32%;
+    display: grid;
+    grid-template-areas: 
+    "player results house"
+    "user results cpu";
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 950px;
+    place-items: center;
+    height: 370px;
+
+    & .game-choice {
+      height: 250px;
+      width: 250px;
+    }
+
+    .step-3_results {
+      grid-area: results;
+    }
+
+    .step-3_text {
+      color: #fff;
+      font-weight: bold;
+      font-size: 28px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+
+      &_results {
+        font-size: 40px;
+        margin-bottom: 30px;
+      }
+    }
+
+    .step-3_results {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .step-3_restart-btn {
+      color: rgb(58, 64, 129);
+      height: 50px;
+      width: 190px;
+      border-radius: 15px;
+      border: none;
+      font-size: 21px;
+      font-weight: bold;
+      outline: none;
+      font-family: "Barlow Semi Condensed", Arial, Helvetica, sans-serif;
+    }
+  }
 }
 

@@ -18,7 +18,7 @@ Modal.ToggleButton = function ({ children, ...restProps }) {
 
 Modal.Wrapper = function ({ children, ...restProps }) {
   const { isOpen } = useContext(IsOpenContext);
-  console.log(isOpen);
+
   return (
     <div {...restProps} className={`modal_content ${isOpen && 'modal_content_open'}`}>
       {children}

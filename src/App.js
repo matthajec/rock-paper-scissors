@@ -3,13 +3,40 @@ import Scoreboard from './components/Scoreboard';
 import Modal from './components/Modal';
 import RulesImg from './images/image-rules.svg';
 import Game from './steps/Game';
+import GameContext from './context/GameContext';
 
 const App = () => {
   const [step, setStep] = useState(1);
   const [score, setScore] = useState(0);
+  const [userChoice, setUserChoice] = useState(null);
+  const [enemy, setEnemy] = useState(null);
+
+  const reset = () => {
+    setStep(1);
+    setUserChoice(null);
+    setEnemy(null);
+  };
 
   return (
-    <>
+    <GameContext.Provider value={{
+      step: {
+        set: setStep,
+        value: step
+      },
+      score: {
+        set: setScore,
+        value: score
+      },
+      userChoice: {
+        set: setUserChoice,
+        value: userChoice
+      },
+      enemy: {
+        set: setEnemy,
+        value: enemy
+      },
+      reset: reset
+    }}>
       <Scoreboard score={score} />
       <Modal>
         <Modal.Wrapper>
@@ -25,7 +52,7 @@ const App = () => {
         <Modal.ToggleButton>Rules</Modal.ToggleButton>
       </Modal>
       <Game step={step} />
-    </>
+    </GameContext.Provider>
   );
 };
 
