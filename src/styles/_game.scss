@@ -82,7 +82,7 @@
     }
 
     .step-3_restart-btn {
-      color: rgb(58, 64, 129);
+      color: rgba(31,54,86,1);
       height: 50px;
       width: 190px;
       border-radius: 15px;
@@ -90,6 +90,7 @@
       font-size: 21px;
       font-weight: bold;
       outline: none;
+      line-height: 0;
       font-family: "Barlow Semi Condensed", Arial, Helvetica, sans-serif;
     }
   }

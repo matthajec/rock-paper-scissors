@@ -37,7 +37,7 @@ export default function StepTwo() {
       <p className="step-2_text">you picked</p>
       <p className="step-2_text">the house picked</p>
       <GameChoice type={userChoice.value} unclickable />
-      {enemy.value ? <GameChoice type={enemy.value} /> : <GameChoice.Fake />}
+      {enemy.value ? <GameChoice type={enemy.value} unclickable /> : <GameChoice.Fake />}
     </>
   );
 }
