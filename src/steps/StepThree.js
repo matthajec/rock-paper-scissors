@@ -6,6 +6,17 @@ export default function StepThree() {
   const { userChoice, step, enemy, reset, score } = useContext(GameContext);
   const [resultsMessage, setResultsMessage] = useState('');
 
+  const decrementScore = () => {
+    score.set(current => {
+      console.log(current - 1)
+      if(current > 0) {
+        return current - 1
+      }
+      return current
+    })
+
+  }
+
   useEffect(() => {
 
     // determine the winner
@@ -17,7 +28,7 @@ export default function StepThree() {
       //if player picked rock
       if (userChoice.value === 'rock') {
         if (enemy.value === 'paper') {
-          score.set(current => current - 1);
+          decrementScore()
           return 'enemy';
         }
         if (enemy.value === 'scissors') {
@@ -29,10 +40,11 @@ export default function StepThree() {
       // if player picker paper
       if (userChoice.value === 'paper') {
         if (enemy.value === 'scissors') {
-          score.set(current => current - 1);
+          decrementScore()
           return 'enemy';
         }
         if (enemy.value === 'rock') {
+          score.set(current => current + 1);
           return 'user';
         }
       }
@@ -40,7 +52,7 @@ export default function StepThree() {
       // if player picked scissors
       if (userChoice.value === 'scissors') {
         if (enemy.value === 'rock') {
-          score.set(current => current - 1);
+          decrementScore()
           return 'enemy';
         }
         if (enemy.value === 'paper') {
